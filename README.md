@@ -34,7 +34,7 @@ Html file:
 ## JavaScript file
 [index.js](https://drive.google.com/file/d/1Z7oXZcKDZeaYqOuaVPhAsYiZrjIuZD3P/view?usp=drive_web&authuser=0) file
 
-JavaScript :
+JavaScript file :
 
 ```javascript
 /**

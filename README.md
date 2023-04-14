@@ -1,6 +1,114 @@
-# Getting Started with Create React App
+# Convert HTML/Javascript webpage into React - Task
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Attached two files, HTML & Javascript, if combined together, it will give interactive web page, we need to change them to interactive React app,
+
+## Html file
+Download [index.html](https://drive.google.com/file/d/14dRWcrgHdvwbMfMxcfhZlhr3BiuIYFmz/view?usp=drive_web&authuser=0) file
+
+OR copy this :
+```html
+<form id="form">
+  <h2>City quiz</h2>
+  <p>What city is located on two continents?</p>
+  <textarea id="textarea"></textarea>
+  <br />
+  <button id="button" disabled>Submit</button>
+  <p id="loading" style="display: none">Loading...</p>
+  <p id="error" style="display: none; color: red"></p>
+</form>
+<h1 id="success" style="display: none">That's right!</h1>
+
+<style>
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    font-family: sans-serif;
+    margin: 20px;
+    padding: 0;
+  }
+</style>
+```
+
+## JavaScript file
+Download [index.js](https://drive.google.com/file/d/1Z7oXZcKDZeaYqOuaVPhAsYiZrjIuZD3P/view?usp=drive_web&authuser=0) file
+
+OR copy this :
+```javascript
+/**
+ * Empty: Form has a disabled “Submit” button.
+Typing: Form has an enabled “Submit” button.
+Submitting: Form is completely disabled. Spinner is shown.
+Success: “Thank you” message is shown instead of a form.
+Error: Same as Typing state, but with an extra error message.
+ */
+
+async function handleFormSubmit(e) {
+  e.preventDefault();
+  disable(textarea);
+  disable(button);
+  show(loadingMessage);
+  hide(errorMessage);
+  try {
+    await submitForm(textarea.value);
+    show(successMessage);
+    hide(form);
+  } catch (err) {
+    show(errorMessage);
+    errorMessage.textContent = err.message;
+  } finally {
+    hide(loadingMessage);
+    enable(textarea);
+    enable(button);
+  }
+}
+
+function handleTextareaChange() {
+  if (textarea.value.length === 0) {
+    disable(button);
+  } else {
+    enable(button);
+  }
+}
+
+function hide(el) {
+  el.style.display = "none";
+}
+
+function show(el) {
+  el.style.display = "";
+}
+
+function enable(el) {
+  el.disabled = false;
+}
+
+function disable(el) {
+  el.disabled = true;
+}
+
+function submitForm(answer) {
+  // Pretend it's hitting the network.
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (answer.toLowerCase() == "istanbul") {
+        resolve();
+      } else {
+        reject(new Error("Good guess but a wrong answer. Try again!"));
+      }
+    }, 1500);
+  });
+}
+
+let form = document.getElementById("form");
+let textarea = document.getElementById("textarea");
+let button = document.getElementById("button");
+let loadingMessage = document.getElementById("loading");
+let errorMessage = document.getElementById("error");
+let successMessage = document.getElementById("success");
+form.onsubmit = handleFormSubmit;
+textarea.oninput = handleTextareaChange;
+```
 
 ## Available Scripts
 
@@ -11,60 +119,4 @@ In the project directory, you can run:
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The page will reload when you make changes.

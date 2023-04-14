@@ -3,7 +3,7 @@
 two files, HTML & Javascript, if combined together, it will give interactive web page, we need to change them to interactive React app,
 
 ## Html file
-[index.html](https://drive.google.com/file/d/14dRWcrgHdvwbMfMxcfhZlhr3BiuIYFmz/view?usp=drive_web&authuser=0) file
+[index.html](https://drive.google.com/file/d/14dRWcrgHdvwbMfMxcfhZlhr3BiuIYFmz/view?usp=drive_web&authuser=0) file .
 
 Html file:
 
@@ -32,7 +32,7 @@ Html file:
 ```
 
 ## JavaScript file
-[index.js](https://drive.google.com/file/d/1Z7oXZcKDZeaYqOuaVPhAsYiZrjIuZD3P/view?usp=drive_web&authuser=0) file
+[index.js](https://drive.google.com/file/d/1Z7oXZcKDZeaYqOuaVPhAsYiZrjIuZD3P/view?usp=drive_web&authuser=0) file .
 
 JavaScript file :
 

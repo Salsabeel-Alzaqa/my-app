@@ -1,11 +1,12 @@
 # Convert HTML/Javascript webpage into React - Task
 
-Attached two files, HTML & Javascript, if combined together, it will give interactive web page, we need to change them to interactive React app,
+two files, HTML & Javascript, if combined together, it will give interactive web page, we need to change them to interactive React app,
 
 ## Html file
-Download [index.html](https://drive.google.com/file/d/14dRWcrgHdvwbMfMxcfhZlhr3BiuIYFmz/view?usp=drive_web&authuser=0) file
+[index.html](https://drive.google.com/file/d/14dRWcrgHdvwbMfMxcfhZlhr3BiuIYFmz/view?usp=drive_web&authuser=0) file
 
-OR copy this :
+Html file:
+
 ```html
 <form id="form">
   <h2>City quiz</h2>
@@ -31,9 +32,10 @@ OR copy this :
 ```
 
 ## JavaScript file
-Download [index.js](https://drive.google.com/file/d/1Z7oXZcKDZeaYqOuaVPhAsYiZrjIuZD3P/view?usp=drive_web&authuser=0) file
+[index.js](https://drive.google.com/file/d/1Z7oXZcKDZeaYqOuaVPhAsYiZrjIuZD3P/view?usp=drive_web&authuser=0) file
 
-OR copy this :
+JavaScript :
+
 ```javascript
 /**
  * Empty: Form has a disabled “Submit” button.
